@@ -274,7 +274,7 @@ public class PreviewControlFragment extends Fragment implements SignalListener {
                 mActivity.runOnUiThread(new Runnable() {
                     @Override
                     public void run() {
-                        Toast.makeText(mActivity, "Patient has Disconnected", Toast.LENGTH_SHORT).show();
+                        Toast.makeText(mActivity, "Patient has Disconnected", Toast.LENGTH_LONG).show();
                         
                         final Dialog dialog = new Dialog(mActivity);
                         dialog.setContentView(R.layout.custom);
@@ -294,96 +294,6 @@ public class PreviewControlFragment extends Fragment implements SignalListener {
                             public void onClick(View v) {
 
  
-                                
-              /*                  
-                                try {
-                                    JSONObject jbj = new JSONObject();
-
-                                    jbj.put("booking_flag","completed");
-
-                                  final String payload=jbj.toString();
-
-                                    RequestQueue queue = Volley.newRequestQueue(mActivity);
-                                    System.out.println(booking_id);
-                                    String url = "https://therightdoctors.com/api/beta/opm/patient/video_consultation_booking/endcall/"+booking_id+"?token=trd_token&key=7xOyNH554tY83cBN7Ktpw3s1y68ql6Eg";
-                                    StringRequest putRequest = new StringRequest(Request.Method.PUT, url,
-                                            new Response.Listener<String>()
-                                            {
-                                                @Override
-                                                public void onResponse(String response) {
-                                                    // response
-                                                    Log.d("Response", response);
-                                                    Toast.makeText(c,response+ "--your Consultation have updated in server", Toast.LENGTH_SHORT).show();
-                                                    mActivity.getWrapper().disconnect();
-                                                    mActivity.finish();
-                                                }
-                                            },
-                                            new Response.ErrorListener()
-                                            {
-                                                @Override
-                                                public void onErrorResponse(VolleyError error) {
-                                                    // error
-                                                    Log.d("Error.Response","response eroro" );
-                                                    if (error instanceof TimeoutError || error instanceof NoConnectionError) {
-                                                        Snackbar snackbar = Snackbar
-                                                                .make(dialog.findViewById(android.R.id.content), "TimeOut or no Connection", Snackbar.LENGTH_LONG);
-                                                        snackbar.setDuration(5000);
-                                                        snackbar.show();
-                                                    } else if (error instanceof AuthFailureError) {
-                                                        //TODO
-                                                        Snackbar snackbar = Snackbar
-                                                                .make(dialog.findViewById(android.R.id.content), "AuthFailure try again with Correct Credentials", Snackbar.LENGTH_LONG);
-                                                        snackbar.setDuration(5000);
-                                                        snackbar.show();
-                                                    } else if (error instanceof ServerError) {
-                                                        //TODO
-                                                        Snackbar snackbar = Snackbar
-                                                                .make(dialog.findViewById(android.R.id.content), "Server Error Please Try After Some time", Snackbar.LENGTH_LONG);
-                                                        snackbar.setDuration(5000);
-                                                        snackbar.show();
-                                                    } else if (error instanceof NetworkError) {
-                                                        //TODO
-                                                        Snackbar snackbar = Snackbar
-                                                                .make(dialog.findViewById(android.R.id.content), "Please the check the Network", Snackbar.LENGTH_LONG);
-                                                        snackbar.setDuration(5000);
-                                                        snackbar.show();
-                                                    } else if (error instanceof ParseError) {
-                                                        //TODO
-                                                        Snackbar snackbar = Snackbar
-                                                                .make(dialog.findViewById(android.R.id.content), "Parse Error", Snackbar.LENGTH_LONG);
-                                                        snackbar.setDuration(5000);
-                                                        snackbar.show();
-                                                    }
-                                                }
-                                                // sdaasf
-                                            }){
-                                        @Override
-                                        public Map<String, String> getHeaders() {
-                                            Map<String, String> pars = new HashMap<String, String>();
-                                            pars.put("Content-Type", "application/x-www-form-urlencoded");
-                                            return pars;
-                                        }
-
-                                        @Override
-                                        protected Map<String, String> getParams() {
-                                            Map<String, String> params = new HashMap<String, String>();
-                                            params.put("json",payload);
-                                            System.out.println(params);
-                                            return params;
-                                        }
-                                    };
-
-
-                                    putRequest.setRetryPolicy(new DefaultRetryPolicy(3*DefaultRetryPolicy.DEFAULT_TIMEOUT_MS, 0, 0));
-                                    putRequest.setRetryPolicy(new DefaultRetryPolicy(0, 0, 0));
-                                    // Adds the JSON object request "obreq" to the request queue
-                                    queue.add(putRequest);
-
-
-
-                                }catch(JSONException e){
-                                    e.printStackTrace();
-                                }*/
                                 dialog.dismiss();
                               
                             }
